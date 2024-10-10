@@ -26,7 +26,7 @@ Example 2: If the user asks how to quit vim, you return: :q
 Here is the question:
 ]]
 
--- Define appendPrompt and add it to the Module table
+
 Module.append_prompt = function(prompt)
   if not prompt then
     error("Prompt is nil; please provide a valid prompt.")
@@ -50,30 +50,27 @@ Module.prompt = function(model, prompt)
   if not prompt then
     error("Prompt is nil; please provide a valid prompt.")
   end
-  local data = vim.fn.json_encode({ model = model, prompt = Module.appendPrompt(prompt), stream = false })
+
+  local data = vim.fn.json_encode({ model = model, prompt = Module.append_prompt(prompt), stream = false })
   local command = 'curl -s -X POST http://localhost:11434/api/generate -d \'' .. data .. '\''
-  print("Prompting..")
+  print("Prompting " .. Module.name .. ":" .. model .. "..")
+
   local response = utils.system(command, 'Failed to run curl')
 
-  -- Check if the model is an OpenAI model
   if model:match("openai") then
-    -- Assuming OpenAI model returns the expected response format
     if not response.choices or #response.choices == 0 then
       error("No choices received in the response.")
     end
     return response.choices[1].message.content -- OpenAI response handling
   else
-    -- Assuming Ollama model returns the response field
     if not response.response then
       error("No response received in the response.")
     end
 
-    -- Clean up the response
-    local clean_response = response.response:gsub("v:null$", "")
-
-    -- Use the cleaned response
-    require('ollama').insert_command(clean_response)
+    local cmd = utils.trim_whitespace(response.response)
+    return cmd
   end
 end
 
 return Module
+
