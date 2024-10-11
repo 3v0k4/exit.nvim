@@ -47,9 +47,14 @@ Module.setup = function(config)
 end
 
 Module.prompt = function(prompt)
+  if not prompt then
+    error("Prompt is nil; please provide a valid prompt.")
+  end
+
   local cmd = Module.options.adapter.prompt(Module.options.model_name, prompt)
   local escaped = vim.fn.escape(cmd, '\\\"')
-  vim.api.nvim_feedkeys(escaped, "n", {})
+  local no_whitespace = utils.trim_whitespace(escaped)
+  vim.api.nvim_feedkeys(no_whitespace, "n", {})
 end
 
 return Module

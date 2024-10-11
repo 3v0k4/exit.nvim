@@ -49,6 +49,10 @@ exit.setup({opts})                                              *exit.setup()*
     - 'openai:gpt-4'
     - 'openai:gpt-4-turbo'
     - 'openai:gpt-4o'
+    - 'ollama:llama3.2:3b'
+    - 'ollama:deepseek-coder:1.3b'
+    - 'ollama:tinydolphin:latest'
+    - 'ollama:qwen2.5:7b'
 
 
 exit.set_model({model_id})                                  *exit.set_model()*
@@ -60,6 +64,10 @@ exit.set_model({model_id})                                  *exit.set_model()*
     - 'openai:gpt-4'
     - 'openai:gpt-4-turbo'
     - 'openai:gpt-4o'
+    - 'ollama:llama3.2:3b'
+    - 'ollama:deepseek-coder:1.3b'
+    - 'ollama:tinydolphin:latest'
+    - 'ollama:qwen2.5:7b'
 
 
 exit.prompt({prompt})                                          *exit.prompt()*

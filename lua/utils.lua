@@ -74,15 +74,12 @@ end
 
 Module.split_once = function(string_, separator)
   local array = {}
-  local start_index, end_index = string.find(string_, separator, 1, true)
+  local sep_start, sep_end = string.find(string_, separator, 1, true)
 
-  if start_index then
-    -- First part before the separator
-    table.insert(array, string.sub(string_, 1, start_index - 1))
-    -- Second part after the separator
-    table.insert(array, string.sub(string_, end_index + 1))
+  if sep_start then
+    table.insert(array, string.sub(string_, 1, sep_start - 1))
+    table.insert(array, string.sub(string_, sep_end + 1))
   else
-    -- No separator found, return the whole string as one item in the array
     table.insert(array, string_)
   end
 
