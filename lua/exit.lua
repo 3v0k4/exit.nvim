@@ -47,8 +47,8 @@ Module.setup = function(config)
 end
 
 Module.prompt = function(prompt)
-  if not prompt then
-    error("Prompt is nil; please provide a valid prompt.")
+  if not prompt or prompt == "" then
+    error("Prompt is empty; please provide a valid prompt.")
   end
 
   local cmd = Module.options.adapter.prompt(Module.options.model_name, prompt)
