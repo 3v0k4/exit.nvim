@@ -72,14 +72,22 @@ Module.keys = function(table_)
   return array
 end
 
-Module.split = function(string_, separator)
+Module.split_once = function(string_, separator)
   local array = {}
+  local sep_start, sep_end = string.find(string_, separator, 1, true)
 
-  for s in string.gmatch(string_, "([^" .. separator .. "]+)") do
-    table.insert(array, s)
+  if sep_start then
+    table.insert(array, string.sub(string_, 1, sep_start - 1))
+    table.insert(array, string.sub(string_, sep_end + 1))
+  else
+    table.insert(array, string_)
   end
 
   return array
+end
+
+Module.trim_whitespace = function(string_)
+  return string.gsub(string_, "^%s*(.-)%s*$", "%1")
 end
 
 Module.system = function(command, error_message)
@@ -107,3 +115,4 @@ Module.api_key = function(adapter_name)
 end
 
 return Module
+
