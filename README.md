@@ -24,13 +24,13 @@ It is suggested to use the latest release [tag](https://github.com/3v0k4/exit.nv
 Using [vim-plug](https://github.com/junegunn/vim-plug)
 
 ```viml
-Plug '3v0k4/exit.nvim', { 'tag': '0.1.0' }
+Plug '3v0k4/exit.nvim', { 'tag': '0.2.0' }
 ```
 
 Using [dein](https://github.com/Shougo/dein.vim)
 
 ```viml
-call dein#add('3v0k4/exit.nvim', { 'rev': '0.1.0' })
+call dein#add('3v0k4/exit.nvim', { 'rev': '0.2.0' })
 " or                           , { 'rev': '0.1.x' })
 ```
 
@@ -38,7 +38,7 @@ Using [packer.nvim](https://github.com/wbthomason/packer.nvim)
 
 ```lua
 use {
-  '3v0k4/exit.nvim', tag = '0.1.0',
+  '3v0k4/exit.nvim', tag = '0.2.0',
 }
 ```
 
@@ -47,12 +47,12 @@ Using [lazy.nvim](https://github.com/folke/lazy.nvim)
 ```lua
 -- init.lua:
 {
-  '3v0k4/exit.nvim', tag = '0.1.0',
+  '3v0k4/exit.nvim', tag = '0.2.0',
 }
 
 -- plugins/exit.lua:
 return {
-  '3v0k4/exit.nvim', tag = '0.1.0',
+  '3v0k4/exit.nvim', tag = '0.2.0',
 }
 ```
 
