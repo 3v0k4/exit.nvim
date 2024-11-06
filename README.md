@@ -24,21 +24,21 @@ It is suggested to use the latest release [tag](https://github.com/3v0k4/exit.nv
 Using [vim-plug](https://github.com/junegunn/vim-plug)
 
 ```viml
-Plug '3v0k4/exit.nvim', { 'tag': '0.3.0' }
+Plug '3v0k4/exit.nvim', { 'tag': '0.4.0' }
 ```
 
 Using [dein](https://github.com/Shougo/dein.vim)
 
 ```viml
-call dein#add('3v0k4/exit.nvim', { 'rev': '0.3.0' })
-" or                           , { 'rev': '0.3.x' })
+call dein#add('3v0k4/exit.nvim', { 'rev': '0.4.0' })
+" or                           , { 'rev': '0.4.x' })
 ```
 
 Using [packer.nvim](https://github.com/wbthomason/packer.nvim)
 
 ```lua
 use {
-  '3v0k4/exit.nvim', tag = '0.3.0',
+  '3v0k4/exit.nvim', tag = '0.4.0',
 }
 ```
 
@@ -47,12 +47,12 @@ Using [lazy.nvim](https://github.com/folke/lazy.nvim)
 ```lua
 -- init.lua:
 {
-  '3v0k4/exit.nvim', tag = '0.3.0',
+  '3v0k4/exit.nvim', tag = '0.4.0',
 }
 
 -- plugins/exit.lua:
 return {
-  '3v0k4/exit.nvim', tag = '0.3.0',
+  '3v0k4/exit.nvim', tag = '0.4.0',
 }
 ```
 
@@ -110,6 +110,7 @@ exit.setup({opts})                                              *exit.setup()*
   Valid keys for {opts.model}:
     - 'openai:MODEL'
     - 'ollama:MODEL'
+    - 'anthropic:MODEL'
 
 
 exit.set_model({model_id})                                  *exit.set_model()*
@@ -119,6 +120,7 @@ exit.set_model({model_id})                                  *exit.set_model()*
   Valid keys for {model_id}:
     - 'openai:MODEL'
     - 'ollama:MODEL'
+    - 'anthropic:MODEL'
 
 
 exit.prompt({prompt})                                          *exit.prompt()*

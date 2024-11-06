@@ -2,6 +2,7 @@ local utils = require 'utils'
 local adapters_by_name = {
   openai = require 'openai',
   ollama = require 'ollama',
+  anthropic = require 'anthropic',
 }
 
 local function components(model_id)

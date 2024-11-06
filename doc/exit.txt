@@ -47,6 +47,7 @@ exit.setup({opts})                                              *exit.setup()*
   Valid keys for {opts.model}:
     - 'openai:MODEL'
     - 'ollama:MODEL'
+    - 'anthropic:MODEL'
 
 
 exit.set_model({model_id})                                  *exit.set_model()*
@@ -56,6 +57,7 @@ exit.set_model({model_id})                                  *exit.set_model()*
   Valid keys for {model_id}:
     - 'openai:MODEL'
     - 'ollama:MODEL'
+    - 'anthropic:MODEL'
 
 
 exit.prompt({prompt})                                          *exit.prompt()*
