@@ -67,14 +67,14 @@ After installing, you can type `:h exit.nvim`:
 exit.nvim is a neovim plugin that allows you to prompt LLMs (large language
 models) to write Vim commands:
 
-  1. `:lua require('exit').setup({ model = 'openai:gpt-3.5-turbo' })`
+  1. `:lua require('exit').setup({ model = 'openai:gpt-4o-mini' })`
   2. `:lua require('exit').prompt('How do I exit Vim?')`
 
 You can set up shortcuts in your neovim config (if you configure Vim with
 LUA, you don't need the first and last lines):
   >
     lua << EOF
-      require('exit').setup({ model = 'openai:gpt-3.5-turbo' })
+      require('exit').setup({ model = 'openai:gpt-4o-mini' })
 
       vim.api.nvim_create_user_command('ExitModel', function(opts)
         require('exit').set_model(opts.args)
@@ -104,7 +104,7 @@ The source code is available at https://github.com/3v0k4/exit.nvim
 exit.setup({opts})                                              *exit.setup()*
   Setup function to configure what LLM to use: >
     require('exit').setup({
-      model = 'openai:gpt-3.5-turbo'
+      model = 'openai:gpt-4o-mini'
     })
 <
   Valid keys for {opts.model}:
@@ -115,7 +115,7 @@ exit.setup({opts})                                              *exit.setup()*
 
 exit.set_model({model_id})                                  *exit.set_model()*
   Sets what LLM to use: >
-    require('exit').set_model('openai:gpt-3.5-turbo')
+    require('exit').set_model('openai:gpt-4o-mini')
 <
   Valid keys for {model_id}:
     - 'openai:MODEL'
