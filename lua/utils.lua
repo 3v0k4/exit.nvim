@@ -90,6 +90,12 @@ Module.trim_whitespace = function(string_)
   return string.gsub(string_, "^%s*(.-)%s*$", "%1")
 end
 
+Module.escape_newlines = function(string_)
+  local r = string.gsub(string_, "\r", "\\r")
+  local n = string.gsub(r, "\n", "\\n")
+  return n
+end
+
 Module.system = function(command, error_message)
   local response = vim.fn.system(command)
   local exit_status = vim.v.shell_error

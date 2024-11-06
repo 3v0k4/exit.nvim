@@ -52,8 +52,9 @@ Module.prompt = function(prompt)
   end
 
   local cmd = Module.options.adapter.prompt(Module.options.model_name, prompt)
-  local escaped = vim.fn.escape(cmd, '\\\"')
-  local no_whitespace = utils.trim_whitespace(escaped)
+  local no_bangs = vim.fn.escape(cmd, "!") -- prevent `:!rm -rf` or `:r !rm -rf` or `w !rm -rf`
+  local no_newlines = utils.escape_newlines(no_bangs) -- prevent autoexecuting the command
+  local no_whitespace = utils.trim_whitespace(no_newlines)
   vim.api.nvim_feedkeys(no_whitespace, "n", {})
 end
 
