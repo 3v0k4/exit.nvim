@@ -24,21 +24,21 @@ It is suggested to use the latest release [tag](https://github.com/3v0k4/exit.nv
 Using [vim-plug](https://github.com/junegunn/vim-plug)
 
 ```viml
-Plug '3v0k4/exit.nvim', { 'tag': '0.2.1' }
+Plug '3v0k4/exit.nvim', { 'tag': '0.3.0' }
 ```
 
 Using [dein](https://github.com/Shougo/dein.vim)
 
 ```viml
-call dein#add('3v0k4/exit.nvim', { 'rev': '0.2.1' })
-" or                           , { 'rev': '0.2.x' })
+call dein#add('3v0k4/exit.nvim', { 'rev': '0.3.0' })
+" or                           , { 'rev': '0.3.x' })
 ```
 
 Using [packer.nvim](https://github.com/wbthomason/packer.nvim)
 
 ```lua
 use {
-  '3v0k4/exit.nvim', tag = '0.2.1',
+  '3v0k4/exit.nvim', tag = '0.3.0',
 }
 ```
 
@@ -47,12 +47,12 @@ Using [lazy.nvim](https://github.com/folke/lazy.nvim)
 ```lua
 -- init.lua:
 {
-  '3v0k4/exit.nvim', tag = '0.2.1',
+  '3v0k4/exit.nvim', tag = '0.3.0',
 }
 
 -- plugins/exit.lua:
 return {
-  '3v0k4/exit.nvim', tag = '0.2.1',
+  '3v0k4/exit.nvim', tag = '0.3.0',
 }
 ```
 
@@ -108,14 +108,8 @@ exit.setup({opts})                                              *exit.setup()*
     })
 <
   Valid keys for {opts.model}:
-    - 'openai:gpt-3.5-turbo'
-    - 'openai:gpt-4'
-    - 'openai:gpt-4-turbo'
-    - 'openai:gpt-4o'
-    - 'ollama:llama3.2:3b'
-    - 'ollama:deepseek-coder:1.3b'
-    - 'ollama:tinydolphin:latest'
-    - 'ollama:qwen2.5:7b'
+    - 'openai:MODEL'
+    - 'ollama:MODEL'
 
 
 exit.set_model({model_id})                                  *exit.set_model()*
@@ -123,14 +117,8 @@ exit.set_model({model_id})                                  *exit.set_model()*
     require('exit').set_model('openai:gpt-3.5-turbo')
 <
   Valid keys for {model_id}:
-    - 'openai:gpt-3.5-turbo'
-    - 'openai:gpt-4'
-    - 'openai:gpt-4-turbo'
-    - 'openai:gpt-4o'
-    - 'ollama:llama3.2:3b'
-    - 'ollama:deepseek-coder:1.3b'
-    - 'ollama:tinydolphin:latest'
-    - 'ollama:qwen2.5:7b'
+    - 'openai:MODEL'
+    - 'ollama:MODEL'
 
 
 exit.prompt({prompt})                                          *exit.prompt()*

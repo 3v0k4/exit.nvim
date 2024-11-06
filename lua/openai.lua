@@ -4,15 +4,6 @@ local Module = {}
 
 Module.name = 'openai'
 
-Module.default_model = 'gpt-3.5-turbo'
-
-Module.models = {
-  Module.default_model,
-  'gpt-4',
-  'gpt-4-turbo',
-  'gpt-4o',
-}
-
 local system_prompt = [[
 Return only the command to be executed as a raw string, no string delimiters
 wrapping it, no yapping, no markdown, no fenced code blocks, what you return
@@ -43,9 +34,9 @@ Module.prompt = function(model, prompt)
     ' -H "Content-Type: application/json"' ..
     ' -H "Authorization: Bearer ' .. api_key .. '"' ..
     ' -d ' .. vim.fn.shellescape(data)
-  print("Prompting..")
+  print("Prompting " .. Module.name .. ":" .. model .. "..")
   local response = utils.system(command, 'Failed to run curl')
-  if response.error then error(response.error.message) end
+  if response.error then error(response.error.message) end -- Among others, if model is not available
   return response.choices[1].message.content -- by default only one choice is returned
 end
 

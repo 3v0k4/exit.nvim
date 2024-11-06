@@ -45,14 +45,8 @@ exit.setup({opts})                                              *exit.setup()*
     })
 <
   Valid keys for {opts.model}:
-    - 'openai:gpt-3.5-turbo'
-    - 'openai:gpt-4'
-    - 'openai:gpt-4-turbo'
-    - 'openai:gpt-4o'
-    - 'ollama:llama3.2:3b'
-    - 'ollama:deepseek-coder:1.3b'
-    - 'ollama:tinydolphin:latest'
-    - 'ollama:qwen2.5:7b'
+    - 'openai:MODEL'
+    - 'ollama:MODEL'
 
 
 exit.set_model({model_id})                                  *exit.set_model()*
@@ -60,14 +54,8 @@ exit.set_model({model_id})                                  *exit.set_model()*
     require('exit').set_model('openai:gpt-3.5-turbo')
 <
   Valid keys for {model_id}:
-    - 'openai:gpt-3.5-turbo'
-    - 'openai:gpt-4'
-    - 'openai:gpt-4-turbo'
-    - 'openai:gpt-4o'
-    - 'ollama:llama3.2:3b'
-    - 'ollama:deepseek-coder:1.3b'
-    - 'ollama:tinydolphin:latest'
-    - 'ollama:qwen2.5:7b'
+    - 'openai:MODEL'
+    - 'ollama:MODEL'
 
 
 exit.prompt({prompt})                                          *exit.prompt()*
