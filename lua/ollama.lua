@@ -9,11 +9,11 @@ Return only the command to be executed as a raw string, no string delimiters
 wrapping it, no yapping, no markdown, no fenced code blocks, one line, what you return
 will be passed to vim directly.
 
-Example 1: if the user asks: select abc
+For example:
+- If the user asks: select abc, you return only: /abc
+- If the user asks: replace x with y, you return only: :%s/x/y/g
+- If the user asks: delete the next 5 lines, you return only: d4j
 
-You return only: /abc
-
-Example 2: If the user asks how to quit vim, you return: :q
 Here is the question:
 ]]
 

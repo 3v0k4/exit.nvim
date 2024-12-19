@@ -9,9 +9,10 @@ Return only the command to be executed as a raw string, no string delimiters
 wrapping it, no yapping, no markdown, no fenced code blocks, what you return
 will be passed to vim directly.
 
-For example, if the user asks: select abc
-
-You return only: /abc
+For example:
+- If the user asks: select abc, you return only: /abc
+- If the user asks: replace x with y, you return only: :%s/x/y/g
+- If the user asks: delete the next 5 lines, you return only: d4j
 ]]
 
 local function messages(prompt)

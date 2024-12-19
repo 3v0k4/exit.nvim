@@ -17,6 +17,12 @@ Once you know how to exit Vim, you can do more useful stuff:
   <img alt="Demo: Delete all the lines that contain solved" src=".github/images/delete.gif" />
 </div>
 
+Some more things you could ask:
+- "move down 5 lines"
+- "substitute foo with bar"
+- "open a new vertical split"
+- "make the current vertical split a horizontal split"
+
 ## Installation
 
 It is suggested to use the latest release [tag](https://github.com/3v0k4/exit.nvim/tags) instead of main.
@@ -24,13 +30,13 @@ It is suggested to use the latest release [tag](https://github.com/3v0k4/exit.nv
 Using [vim-plug](https://github.com/junegunn/vim-plug)
 
 ```viml
-Plug '3v0k4/exit.nvim', { 'tag': '0.4.0' }
+Plug '3v0k4/exit.nvim', { 'tag': '0.4.1' }
 ```
 
 Using [dein](https://github.com/Shougo/dein.vim)
 
 ```viml
-call dein#add('3v0k4/exit.nvim', { 'rev': '0.4.0' })
+call dein#add('3v0k4/exit.nvim', { 'rev': '0.4.1' })
 " or                           , { 'rev': '0.4.x' })
 ```
 
@@ -38,7 +44,7 @@ Using [packer.nvim](https://github.com/wbthomason/packer.nvim)
 
 ```lua
 use {
-  '3v0k4/exit.nvim', tag = '0.4.0',
+  '3v0k4/exit.nvim', tag = '0.4.1',
 }
 ```
 
@@ -47,12 +53,12 @@ Using [lazy.nvim](https://github.com/folke/lazy.nvim)
 ```lua
 -- init.lua:
 {
-  '3v0k4/exit.nvim', tag = '0.4.0',
+  '3v0k4/exit.nvim', tag = '0.4.1',
 }
 
 -- plugins/exit.lua:
 return {
-  '3v0k4/exit.nvim', tag = '0.4.0',
+  '3v0k4/exit.nvim', tag = '0.4.1',
 }
 ```
 
